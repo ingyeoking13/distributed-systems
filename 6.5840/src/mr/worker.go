@@ -45,7 +45,7 @@ func Worker(
 			content, _ := os.ReadFile(reply.File)
 
 			// map 함수 실행
-			// Map
+			// mapf is See wc.go Map
 			kva := mapf(reply.File, string(content))
 			// intermediate 파일 생성
 			buckets := make([][]KeyValue, reply.NReduce)
@@ -56,13 +56,12 @@ func Worker(
 
 			for r := 0; r < reply.NReduce; r++ {
 				oname := fmt.Sprintf("mr-%d-%d", reply.Id, r)
-				tmp, _ := os.CreateTemp("", "mr-map-tmp-*")
-				enc := json.NewEncoder(tmp)
+				file, _ := os.Create(oname)
+				enc := json.NewEncoder(file)
 				for _, kv := range buckets[r] {
 					enc.Encode(&kv)
 				}
-				tmp.Close()
-				os.Rename(tmp.Name(), oname)
+				file.Close()
 			}
 
 			// 완료 보고
@@ -98,7 +97,7 @@ func Worker(
 			})
 			// 3 reduce 실행
 			oname := fmt.Sprintf("mr-out-%d", reply.Id)
-			tmp, _ := os.CreateTemp("", "mr-out-tmp-*")
+			file, _ := os.Create(oname)
 
 			for i := 0; i < len(kva); {
 				j := i + 1
@@ -110,11 +109,10 @@ func Worker(
 					values = append(values, kva[k].Value)
 				}
 				output := reducef(kva[i].Key, values)
-				fmt.Fprintf(tmp, "%v %v\n", kva[i].Key, output)
+				fmt.Fprintf(file, "%v %v\n", kva[i].Key, output)
 				i = j
 			}
-			tmp.Close()
-			os.Rename(tmp.Name(), oname)
+			file.Close()
 
 			report := TaskArgs{
 				TaskType: ReduceTask,
