@@ -11,75 +11,70 @@ import (
 	"time"
 )
 
-//
 // Map functions return a slice of KeyValue.
-//
 type KeyValue struct {
 	Key   string
 	Value string
 }
 
-//
 // use ihash(key) % NReduce to choose the reduce
 // task number for each KeyValue emitted by Map.
-//
 func ihash(key string) int {
 	h := fnv.New32a()
 	h.Write([]byte(key))
 	return int(h.Sum32() & 0x7fffffff)
 }
 
-
-//
 // main/mrworker.go calls this function.
-//
 func Worker(
-	mapf func(string, string) []KeyValue, 
+	mapf func(string, string) []KeyValue,
 	reducef func(string, []string) string) {
 
-	for { 
+	for {
 		// Your worker implementation here.
 		args := TaskArgs{}
 		reply := TaskReply{}
-		ok := call("Coordinator.RPCHandler", &args, &reply) 
+		ok := call("Coordinator.JobRequest", &args, &reply)
 		if !ok {
 			return
-		} 
+		}
 
 		switch reply.TaskType {
-		case MapTask: // map 동작 
-			// 입력 파일 읽기 
+		case MapTask: // map 동작
+			// 입력 파일 읽기
 			content, _ := os.ReadFile(reply.File)
 
-			// map 함수 실행 
+			// map 함수 실행
+			// Map
 			kva := mapf(reply.File, string(content))
-			// intermediate 파일 생성 
+			// intermediate 파일 생성
 			buckets := make([][]KeyValue, reply.NReduce)
 			for _, kv := range kva {
 				r := ihash(kv.Key) % reply.NReduce
 				buckets[r] = append(buckets[r], kv)
 			}
 
-			for r :=0; r<reply.NReduce; r ++ {
+			for r := 0; r < reply.NReduce; r++ {
 				oname := fmt.Sprintf("mr-%d-%d", reply.Id, r)
-				ofile, _ := os.Create(oname)
-				enc := json.NewEncoder(ofile)
+				tmp, _ := os.CreateTemp("", "mr-map-tmp-*")
+				enc := json.NewEncoder(tmp)
 				for _, kv := range buckets[r] {
 					enc.Encode(&kv)
 				}
-				ofile.Close()
+				tmp.Close()
+				os.Rename(tmp.Name(), oname)
 			}
 
-			// 완료 보고 
-			report := TaskArgs {
+			// 완료 보고
+			report := TaskArgs{
 				TaskType: MapTask,
-				Done: true,
-				Id: reply.Id,
+				Done:     true,
+				Id:       reply.Id,
 			}
-			call("Coordinator.RPCHandler", &report, &TaskReply{})
-		case ReduceTask: 
+			call("Coordinator.RPCDone", &report, &TaskReply{})
+		case ReduceTask:
 			kva := []KeyValue{}
-			for m:=0;;m++ {
+			for m := 0; ; m++ {
 				name := fmt.Sprintf("mr-%d-%d", m, reply.Id)
 				file, err := os.Open(name)
 				if err != nil {
@@ -88,7 +83,7 @@ func Worker(
 				dec := json.NewDecoder(file)
 				for {
 					var kv KeyValue
-					err:= dec.Decode(&kv)
+					err := dec.Decode(&kv)
 					if err != nil {
 						break
 					}
@@ -97,35 +92,36 @@ func Worker(
 				file.Close()
 			}
 
-			// key 정렬 
+			// key 정렬
 			sort.Slice(kva, func(i, j int) bool {
 				return kva[i].Key < kva[j].Key
 			})
-			// 3 reduce 실행 
+			// 3 reduce 실행
 			oname := fmt.Sprintf("mr-out-%d", reply.Id)
-			ofile, _ := os.Create(oname)
+			tmp, _ := os.CreateTemp("", "mr-out-tmp-*")
 
-			for i :=0; i < len(kva); { 
+			for i := 0; i < len(kva); {
 				j := i + 1
 				for j < len(kva) && kva[j].Key == kva[i].Key {
 					j++
 				}
 				values := []string{}
-				for k := i; k<j; k++ {
+				for k := i; k < j; k++ {
 					values = append(values, kva[k].Value)
 				}
 				output := reducef(kva[i].Key, values)
-				fmt.Fprintf(ofile, "%v %v\n", kva[i].Key, output)
+				fmt.Fprintf(tmp, "%v %v\n", kva[i].Key, output)
 				i = j
 			}
-			ofile.Close()
+			tmp.Close()
+			os.Rename(tmp.Name(), oname)
 
-			report := TaskArgs {
-				TaskType:  ReduceTask,
-				Id: reply.Id,
-				Done: true,
+			report := TaskArgs{
+				TaskType: ReduceTask,
+				Id:       reply.Id,
+				Done:     true,
 			}
-			call("Coordinator.RPCHandler", &report, &TaskReply{})
+			call("Coordinator.RPCDone", &report, &TaskReply{})
 		case Wait:
 			time.Sleep(time.Second)
 		case Exit:
@@ -138,11 +134,9 @@ func Worker(
 
 }
 
-//
 // example function to show how to make an RPC call to the coordinator.
 //
 // the RPC argument and reply types are defined in rpc.go.
-//
 func CallExample() {
 
 	// declare an argument structure.
@@ -167,11 +161,9 @@ func CallExample() {
 	}
 }
 
-//
 // send an RPC request to the coordinator, wait for the response.
 // usually returns true.
 // returns false if something goes wrong.
-//
 func call(rpcname string, args interface{}, reply interface{}) bool {
 	// c, err := rpc.DialHTTP("tcp", "127.0.0.1"+":1234")
 	sockname := coordinatorSock()
