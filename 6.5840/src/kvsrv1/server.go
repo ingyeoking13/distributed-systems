@@ -75,6 +75,11 @@ func (kv *KVServer) Put(args *rpc.PutArgs, reply *rpc.PutReply) {
 	}
 
 	if args.Version == value.Version {
+		if args.Value == "RELEASED" {
+			delete(kv.kv, args.Key)
+			return
+		}
+
 		kv.kv[args.Key] = KVData{Value: args.Value, Version: args.Version + 1}
 		return
 	}
