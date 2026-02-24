@@ -1,14 +1,10 @@
 package mr
 
 import (
-	"encoding/json"
 	"fmt"
 	"hash/fnv"
 	"log"
 	"net/rpc"
-	"os"
-	"sort"
-	"time"
 )
 
 // Map functions return a slice of KeyValue.
@@ -29,104 +25,6 @@ func ihash(key string) int {
 func Worker(
 	mapf func(string, string) []KeyValue,
 	reducef func(string, []string) string) {
-
-	for {
-		// Your worker implementation here.
-		args := TaskArgs{}
-		reply := TaskReply{}
-		ok := call("Coordinator.JobRequest", &args, &reply)
-		if !ok {
-			return
-		}
-
-		switch reply.TaskType {
-		case MapTask: // map 동작
-			// 입력 파일 읽기
-			content, _ := os.ReadFile(reply.File)
-
-			// map 함수 실행
-			// mapf is See wc.go Map
-			kva := mapf(reply.File, string(content))
-			// intermediate 파일 생성
-			buckets := make([][]KeyValue, reply.NReduce)
-			for _, kv := range kva {
-				r := ihash(kv.Key) % reply.NReduce
-				buckets[r] = append(buckets[r], kv)
-			}
-
-			for r := 0; r < reply.NReduce; r++ {
-				oname := fmt.Sprintf("mr-%d-%d", reply.Id, r)
-				file, _ := os.Create(oname)
-				enc := json.NewEncoder(file)
-				for _, kv := range buckets[r] {
-					enc.Encode(&kv)
-				}
-				file.Close()
-			}
-
-			// 완료 보고
-			report := TaskArgs{
-				TaskType: MapTask,
-				Done:     true,
-				Id:       reply.Id,
-			}
-			call("Coordinator.RPCDone", &report, &TaskReply{})
-		case ReduceTask:
-			kva := []KeyValue{}
-			for m := 0; ; m++ {
-				name := fmt.Sprintf("mr-%d-%d", m, reply.Id)
-				file, err := os.Open(name)
-				if err != nil {
-					break
-				}
-				dec := json.NewDecoder(file)
-				for {
-					var kv KeyValue
-					err := dec.Decode(&kv)
-					if err != nil {
-						break
-					}
-					kva = append(kva, kv)
-				}
-				file.Close()
-			}
-
-			// key 정렬
-			sort.Slice(kva, func(i, j int) bool {
-				return kva[i].Key < kva[j].Key
-			})
-			// 3 reduce 실행
-			oname := fmt.Sprintf("mr-out-%d", reply.Id)
-			file, _ := os.Create(oname)
-
-			for i := 0; i < len(kva); {
-				j := i + 1
-				for j < len(kva) && kva[j].Key == kva[i].Key {
-					j++
-				}
-				values := []string{}
-				for k := i; k < j; k++ {
-					values = append(values, kva[k].Value)
-				}
-				output := reducef(kva[i].Key, values)
-				fmt.Fprintf(file, "%v %v\n", kva[i].Key, output)
-				i = j
-			}
-			file.Close()
-
-			report := TaskArgs{
-				TaskType: ReduceTask,
-				Id:       reply.Id,
-				Done:     true,
-			}
-			call("Coordinator.RPCDone", &report, &TaskReply{})
-		case Wait:
-			time.Sleep(time.Second)
-		case Exit:
-			return
-		}
-	}
-
 	// uncomment to send the Example RPC to the coordinator.
 	// CallExample()
 
