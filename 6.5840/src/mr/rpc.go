@@ -24,6 +24,39 @@ type ExampleReply struct {
 	Y int
 }
 
+type JobType int
+
+const (
+	MapType    JobType = 0
+	ReduceType JobType = 1
+	FIN        JobType = 2
+)
+
+type JobArgs struct {
+	Idx      int
+	JobType  JobType
+	FileName string
+}
+
+type JobReply struct {
+	JobType           JobType
+	Idx               int
+	FileName          string
+	IntermediateFiles []string
+	NReduce           int
+}
+
+type FinJobArgs struct {
+	Idx          int
+	JobType      JobType
+	OriFileNames []string
+	ResFileNames []string
+}
+
+type FinJobReply struct {
+	Good bool
+}
+
 // Add your RPC definitions here.
 
 // Cook up a unique-ish UNIX-domain socket name

@@ -1,10 +1,14 @@
 package mr
 
 import (
+	"encoding/json"
 	"fmt"
 	"hash/fnv"
+	"io"
 	"log"
 	"net/rpc"
+	"os"
+	"sort"
 )
 
 // Map functions return a slice of KeyValue.
@@ -27,6 +31,105 @@ func Worker(
 	reducef func(string, []string) string) {
 	// uncomment to send the Example RPC to the coordinator.
 	// CallExample()
+
+	for {
+		args := JobArgs{}
+		reply := JobReply{}
+		ok := call("Coordinator.GetJob", &args, &reply)
+		if ok {
+			jobType := reply.JobType
+			switch jobType {
+			case MapType:
+				intermediate := make([][]KeyValue, reply.NReduce)
+
+				file, _ := os.Open(reply.FileName)
+				content, _ := io.ReadAll(file)
+				file.Close()
+				kva := mapf(reply.FileName, string(content))
+
+				for _, kv := range kva {
+					idx := ihash(kv.Key) % reply.NReduce
+					intermediate[idx] = append(intermediate[idx], kv)
+				}
+
+				for i := 0; i < len(intermediate); i++ {
+
+					resultFileName := fmt.Sprintf("mr-inter-%d-%d", reply.Idx, i)
+					fout, _ := os.Create(resultFileName)
+					enc := json.NewEncoder(fout)
+
+					for _, kv := range intermediate[i] {
+						enc.Encode(&kv)
+					}
+
+					fout.Close()
+				}
+
+				finArgs := FinJobArgs{}
+				finReply := FinJobReply{}
+
+				finArgs.Idx = reply.Idx
+				finArgs.JobType = MapType
+				finArgs.OriFileNames = []string{reply.FileName}
+				for i := 0; i < len(intermediate); i++ {
+					resultFileName := fmt.Sprintf("mr-inter-%d-%d", reply.Idx, i)
+					finArgs.ResFileNames = append(finArgs.ResFileNames, resultFileName)
+				}
+
+				call("Coordinator.FinJob", &finArgs, &finReply)
+
+			case ReduceType:
+				var kva []KeyValue
+				for _, fileName := range reply.IntermediateFiles {
+					file, _ := os.Open(fileName)
+					dec := json.NewDecoder(file)
+
+					for {
+						var kv KeyValue
+						err := dec.Decode(&kv)
+						if err != nil {
+							break
+						}
+						kva = append(kva, kv)
+					}
+				}
+				sort.Slice(kva, func(a, b int) bool {
+					return kva[a].Key < kva[b].Key
+				})
+
+				resultFileName := fmt.Sprintf("mr-out-%d", reply.Idx)
+				ofile, _ := os.Create(resultFileName)
+				// repeat of mrsequential.go
+
+				i := 0
+				for i < len(kva) {
+					j := i + 1
+					for j < len(kva) && kva[j].Key == kva[i].Key {
+						j++
+					}
+					values := []string{}
+					for k := i; k < j; k++ {
+						values = append(values, kva[k].Value)
+					}
+					output := reducef(kva[i].Key, values)
+
+					// this is the correct format for each line of Reduce output.
+					fmt.Fprintf(ofile, "%v %v\n", kva[i].Key, output)
+					i = j
+				}
+
+				ofile.Close()
+
+				finArgs := FinJobArgs{}
+				finReply := FinJobReply{}
+				finArgs.JobType = ReduceType
+				call("Coordinator.FinJob", &finArgs, &finReply)
+			case FIN:
+				return
+			}
+
+		}
+	}
 
 }
 
@@ -74,6 +177,5 @@ func call(rpcname string, args interface{}, reply interface{}) bool {
 		return true
 	}
 
-	fmt.Println(err)
 	return false
 }
