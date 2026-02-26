@@ -1,130 +1,134 @@
 package mr
 
 import (
-	"fmt"
 	"log"
 	"net"
 	"net/http"
 	"net/rpc"
 	"os"
-	"regexp"
-	"strconv"
 	"sync"
 	"time"
 )
 
-type MapJob struct {
-	id        int
-	splitFile string
-	done      bool
-	startTime time.Time
-}
+type TaskState int
+type TaskType int
 
-type ReducerJob struct {
-	partitionId int
-	files       []string
-	done        bool
-	startTime   time.Time
+const (
+	Idle TaskState = iota
+	InProgress
+	Completed
+)
+
+const (
+	MapTask TaskType = iota
+	ReduceTask
+	Wait
+	Exit
+)
+
+type Task struct {
+	Id        int
+	File      string
+	State     TaskState
+	TaskType  TaskType
+	StartTime time.Time
 }
 
 type Coordinator struct {
 	// Your definitions here.
-	muLock               sync.Mutex
-	nReduce              int
-	mapJobs              []MapJob
-	reducerJobs          []ReducerJob
-	intermediateFiles    [][]string
-	remainedReducerCount int
-	remainedMapCount     int
+	NReduce     int
+	Mutex       sync.Mutex
+	MapTasks    []Task
+	ReduceTasks []Task
+	MapDone     int
+	ReduceDone  int
 }
 
 // Your code here -- RPC handlers for the worker to call.
-func (c *Coordinator) GetJob(args *JobArgs, reply *JobReply) error {
-	c.muLock.Lock()
-	defer c.muLock.Unlock()
+func (c *Coordinator) JobRequest(args *TaskArgs, reply *TaskReply) error {
+	c.Mutex.Lock()
+	defer c.Mutex.Unlock()
 
-	// 만약 모든 job이 map이 끝나지 않았다면
-	if c.remainedMapCount > 0 {
-		for i := 0; i < len(c.mapJobs); i++ {
-			if c.mapJobs[i].done == true {
-				continue
+	reply.NReduce = c.NReduce
+
+	if c.MapDone < len(c.MapTasks) {
+		for i := 0; i < len(c.MapTasks); i++ {
+			state := c.MapTasks[i].State
+			startTime := c.MapTasks[i].StartTime
+			switch state {
+			case Idle:
+				reply.Id = c.MapTasks[i].Id
+				reply.TaskType = c.MapTasks[i].TaskType
+				reply.File = c.MapTasks[i].File
+				c.MapTasks[i].State = InProgress
+				c.MapTasks[i].StartTime = time.Now()
+				return nil
+			case InProgress:
+				tenSecondsAgo := time.Now().Add(-10 * time.Second)
+				if startTime.Before(tenSecondsAgo) {
+					reply.Id = c.MapTasks[i].Id
+					reply.TaskType = c.MapTasks[i].TaskType
+					reply.File = c.MapTasks[i].File
+					c.MapTasks[i].State = InProgress
+					c.MapTasks[i].StartTime = time.Now()
+					return nil
+				}
 			}
-
-			if c.mapJobs[i].startTime.Add(10 * time.Second).After(time.Now()) {
-				continue
-			}
-
-			job := &c.mapJobs[i]
-			job.startTime = time.Now()
-
-			reply.JobType = MapType
-			reply.NReduce = c.nReduce
-			reply.Idx = job.id
-			reply.FileName = job.splitFile
-			return nil
 		}
-	}
-
-	reply.JobType = ReduceType
-	for i := 0; i < len(c.reducerJobs); i++ {
-		if c.reducerJobs[i].done == true {
-			continue
-		}
-
-		if c.reducerJobs[i].startTime.Add(10 * time.Second).After(time.Now()) {
-			continue
-		}
-
-		job := &c.reducerJobs[i]
-		job.startTime = time.Now()
-		job.partitionId = i
-
-		reply.Idx = job.partitionId
-		fmt.Println(len(c.intermediateFiles[job.partitionId]))
-		for _, intermediateFile := range c.intermediateFiles[job.partitionId] {
-			reply.IntermediateFiles = append(reply.IntermediateFiles, intermediateFile)
-		}
-		fmt.Println(reply.IntermediateFiles)
+		reply.Id = -1
+		reply.TaskType = Wait
 		return nil
 	}
 
-	reply.JobType = FIN
+	if c.ReduceDone < len(c.ReduceTasks) {
+		for i := 0; i < len(c.ReduceTasks); i++ {
+			state := c.ReduceTasks[i].State
+			startTime := c.ReduceTasks[i].StartTime
+			switch state {
+			case Idle:
+				reply.Id = c.ReduceTasks[i].Id
+				reply.TaskType = c.ReduceTasks[i].TaskType
+				c.ReduceTasks[i].State = InProgress
+				c.ReduceTasks[i].StartTime = time.Now()
+				return nil
+			case InProgress:
+				tenSecondsAgo := time.Now().Add(-10 * time.Second)
+				if startTime.Before(tenSecondsAgo) {
+					reply.Id = c.ReduceTasks[i].Id
+					reply.TaskType = c.ReduceTasks[i].TaskType
+					reply.File = c.ReduceTasks[i].File
+					c.ReduceTasks[i].State = InProgress
+					c.ReduceTasks[i].StartTime = time.Now()
+					return nil
+				}
+			}
+		}
+		reply.TaskType = Wait
+		return nil
+	}
+
+	reply.TaskType = Exit
 	return nil
 }
 
-func (c *Coordinator) FinJob(args *FinJobArgs, reply *FinJobReply) error {
-	c.muLock.Lock()
-	defer c.muLock.Unlock()
-
-	reply.Good = true
-	if args.JobType == MapType {
-		c.remainedReducerCount++
-		fmt.Println(c.remainedReducerCount)
-		c.remainedMapCount--
-
-		if c.intermediateFiles == nil {
-			c.intermediateFiles = make([][]string, c.nReduce)
-		}
-
-		re := regexp.MustCompile(`(\d+)$`)
-		for _, resFileName := range args.ResFileNames {
-			id, _ := strconv.Atoi(re.FindStringSubmatch(resFileName)[0])
-			fmt.Println(id, resFileName)
-			c.intermediateFiles[id] = append(c.intermediateFiles[id], resFileName)
-		}
-
-		c.mapJobs[args.Idx].done = true
-		var reducerJob ReducerJob
-		c.reducerJobs = append(c.reducerJobs, reducerJob)
+func (c *Coordinator) RPCDone(args *TaskArgs, reply *TaskReply) error {
+	c.Mutex.Lock()
+	defer c.Mutex.Unlock()
+	if !args.Done {
 		return nil
 	}
 
-	// else reduce job finished
-
-	c.remainedReducerCount--
-	c.reducerJobs[args.Idx].done = true
+	if args.TaskType == MapTask {
+		c.MapTasks[args.Id].State = Completed
+		c.MapDone++
+		return nil
+	}
+	if args.TaskType == ReduceTask {
+		c.ReduceTasks[args.Id].State = Completed
+		c.ReduceDone++
+		return nil
+	}
 	return nil
-
 }
 
 // an example RPC handler.
@@ -153,10 +157,12 @@ func (c *Coordinator) server() {
 // if the entire job has finished.
 func (c *Coordinator) Done() bool {
 	// Your code here.
-	c.muLock.Lock()
-	defer c.muLock.Unlock()
-
-	return c.remainedReducerCount == 0 && c.remainedMapCount == 0
+	for _, task := range c.ReduceTasks {
+		if task.State != Completed {
+			return false
+		}
+	}
+	return true
 }
 
 // create a Coordinator.
@@ -164,19 +170,27 @@ func (c *Coordinator) Done() bool {
 // nReduce is the number of reduce tasks to use.
 func MakeCoordinator(files []string, nReduce int) *Coordinator {
 	// Your code here.
-	var co Coordinator
-	co.nReduce = nReduce
-	fmt.Print(co.nReduce)
-	co.remainedMapCount = len(files)
-
-	for idx, file := range files {
-		var newJob MapJob
-		newJob.id = idx
-		newJob.splitFile = file
-		newJob.done = false
-		co.mapJobs = append(co.mapJobs, newJob)
+	c := Coordinator{
+		NReduce: nReduce,
 	}
 
-	co.server()
-	return &co
+	for i := 0; i < len(files); i++ {
+		c.MapTasks = append(c.MapTasks, Task{
+			File:     files[i],
+			Id:       i,
+			State:    Idle,
+			TaskType: MapTask,
+		})
+	}
+
+	for i := 0; i < nReduce; i++ {
+		c.ReduceTasks = append(c.ReduceTasks, Task{
+			Id:       i,
+			State:    Idle,
+			TaskType: ReduceTask,
+		})
+	}
+
+	c.server()
+	return &c
 }

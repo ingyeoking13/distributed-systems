@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"hash/fnv"
-	"io"
 	"log"
 	"net/rpc"
 	"os"
 	"sort"
+	"time"
 )
 
 // Map functions return a slice of KeyValue.
@@ -29,107 +29,106 @@ func ihash(key string) int {
 func Worker(
 	mapf func(string, string) []KeyValue,
 	reducef func(string, []string) string) {
-	// uncomment to send the Example RPC to the coordinator.
-	// CallExample()
 
 	for {
-		args := JobArgs{}
-		reply := JobReply{}
-		ok := call("Coordinator.GetJob", &args, &reply)
-		if ok {
-			jobType := reply.JobType
-			switch jobType {
-			case MapType:
-				intermediate := make([][]KeyValue, reply.NReduce)
+		// Your worker implementation here.
+		args := TaskArgs{}
+		reply := TaskReply{}
+		ok := call("Coordinator.JobRequest", &args, &reply)
+		if !ok {
+			return
+		}
 
-				file, _ := os.Open(reply.FileName)
-				content, _ := io.ReadAll(file)
-				file.Close()
-				kva := mapf(reply.FileName, string(content))
+		switch reply.TaskType {
+		case MapTask: // map 동작
+			// 입력 파일 읽기
+			content, _ := os.ReadFile(reply.File)
 
-				for _, kv := range kva {
-					idx := ihash(kv.Key) % reply.NReduce
-					intermediate[idx] = append(intermediate[idx], kv)
-				}
-
-				for i := 0; i < len(intermediate); i++ {
-
-					resultFileName := fmt.Sprintf("mr-inter-%d-%d", reply.Idx, i)
-					fout, _ := os.Create(resultFileName)
-					enc := json.NewEncoder(fout)
-
-					for _, kv := range intermediate[i] {
-						enc.Encode(&kv)
-					}
-
-					fout.Close()
-				}
-
-				finArgs := FinJobArgs{}
-				finReply := FinJobReply{}
-
-				finArgs.Idx = reply.Idx
-				finArgs.JobType = MapType
-				finArgs.OriFileNames = []string{reply.FileName}
-				for i := 0; i < len(intermediate); i++ {
-					resultFileName := fmt.Sprintf("mr-inter-%d-%d", reply.Idx, i)
-					finArgs.ResFileNames = append(finArgs.ResFileNames, resultFileName)
-				}
-
-				call("Coordinator.FinJob", &finArgs, &finReply)
-
-			case ReduceType:
-				var kva []KeyValue
-				for _, fileName := range reply.IntermediateFiles {
-					file, _ := os.Open(fileName)
-					dec := json.NewDecoder(file)
-
-					for {
-						var kv KeyValue
-						err := dec.Decode(&kv)
-						if err != nil {
-							break
-						}
-						kva = append(kva, kv)
-					}
-				}
-				sort.Slice(kva, func(a, b int) bool {
-					return kva[a].Key < kva[b].Key
-				})
-
-				resultFileName := fmt.Sprintf("mr-out-%d", reply.Idx)
-				ofile, _ := os.Create(resultFileName)
-				// repeat of mrsequential.go
-
-				i := 0
-				for i < len(kva) {
-					j := i + 1
-					for j < len(kva) && kva[j].Key == kva[i].Key {
-						j++
-					}
-					values := []string{}
-					for k := i; k < j; k++ {
-						values = append(values, kva[k].Value)
-					}
-					output := reducef(kva[i].Key, values)
-
-					// this is the correct format for each line of Reduce output.
-					fmt.Fprintf(ofile, "%v %v\n", kva[i].Key, output)
-					i = j
-				}
-
-				ofile.Close()
-
-				finArgs := FinJobArgs{}
-				finReply := FinJobReply{}
-				finArgs.JobType = ReduceType
-				call("Coordinator.FinJob", &finArgs, &finReply)
-			case FIN:
-				return
+			// map 함수 실행
+			// mapf is See wc.go Map
+			kva := mapf(reply.File, string(content))
+			// intermediate 파일 생성
+			buckets := make([][]KeyValue, reply.NReduce)
+			for _, kv := range kva {
+				r := ihash(kv.Key) % reply.NReduce
+				buckets[r] = append(buckets[r], kv)
 			}
 
+			for r := 0; r < reply.NReduce; r++ {
+				oname := fmt.Sprintf("mr-%d-%d", reply.Id, r)
+				file, _ := os.Create(oname)
+				enc := json.NewEncoder(file)
+				for _, kv := range buckets[r] {
+					enc.Encode(&kv)
+				}
+				file.Close()
+			}
+
+			// 완료 보고
+			report := TaskArgs{
+				TaskType: MapTask,
+				Done:     true,
+				Id:       reply.Id,
+			}
+			call("Coordinator.RPCDone", &report, &TaskReply{})
+		case ReduceTask:
+			kva := []KeyValue{}
+			for m := 0; ; m++ {
+				name := fmt.Sprintf("mr-%d-%d", m, reply.Id)
+				file, err := os.Open(name)
+				if err != nil {
+					break
+				}
+				dec := json.NewDecoder(file)
+				for {
+					var kv KeyValue
+					err := dec.Decode(&kv)
+					if err != nil {
+						break
+					}
+					kva = append(kva, kv)
+				}
+				file.Close()
+			}
+
+			// key 정렬
+			sort.Slice(kva, func(i, j int) bool {
+				return kva[i].Key < kva[j].Key
+			})
+			// 3 reduce 실행
+			oname := fmt.Sprintf("mr-out-%d", reply.Id)
+			file, _ := os.Create(oname)
+
+			for i := 0; i < len(kva); {
+				j := i + 1
+				for j < len(kva) && kva[j].Key == kva[i].Key {
+					j++
+				}
+				values := []string{}
+				for k := i; k < j; k++ {
+					values = append(values, kva[k].Value)
+				}
+				output := reducef(kva[i].Key, values)
+				fmt.Fprintf(file, "%v %v\n", kva[i].Key, output)
+				i = j
+			}
+			file.Close()
+
+			report := TaskArgs{
+				TaskType: ReduceTask,
+				Id:       reply.Id,
+				Done:     true,
+			}
+			call("Coordinator.RPCDone", &report, &TaskReply{})
+		case Wait:
+			time.Sleep(time.Second)
+		case Exit:
+			return
 		}
 	}
+
+	// uncomment to send the Example RPC to the coordinator.
+	// CallExample()
 
 }
 
