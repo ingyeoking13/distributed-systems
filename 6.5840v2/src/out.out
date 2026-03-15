@@ -1,0 +1,1722 @@
+go build -race -o main/raft1d main/raft1d.go
+cd raft1 && go test -v -race -run 3A 
+=== RUN   TestInitialElection3A
+**me 0 think vote in term 1
+**me 1 think vote in term 1
+**me 2 think vote in term 1
+Test (3A): initial election (reliable network)...
+**me 0 think vote in term 2
+me 2 vote for 0 in Term 2
+me 1 vote for 0 in Term 2
+became a leader im 0 in term  2
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.394814 +0900 KST m=+0.414746334
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.395242 +0900 KST m=+0.415173958
+28
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.451138 +0900 KST m=+0.471071255
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.451243 +0900 KST m=+0.471176570
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.491253 +0900 KST m=+0.511187342
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.491379 +0900 KST m=+0.511313201
+27
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.53046 +0900 KST m=+0.550395024
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.530565 +0900 KST m=+0.550500060
+no need vote 0 in 2state 2
+29
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.569462 +0900 KST m=+0.589397935
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.569565 +0900 KST m=+0.589500346
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.611849 +0900 KST m=+0.631785397
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.611951 +0900 KST m=+0.631887246
+35
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.66061 +0900 KST m=+0.680547304
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.66072 +0900 KST m=+0.680657479
+41
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.708648 +0900 KST m=+0.728586612
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.708753 +0900 KST m=+0.728690817
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.770846 +0900 KST m=+0.790784991
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.770939 +0900 KST m=+0.790877806
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.824691 +0900 KST m=+0.844631068
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.824789 +0900 KST m=+0.844729097
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.862071 +0900 KST m=+0.882012004
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.862168 +0900 KST m=+0.882109236
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.903475 +0900 KST m=+0.923417178
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.903594 +0900 KST m=+0.923535602
+3
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.942989 +0900 KST m=+0.962931300
+me 0 term 2 send heart beat at 2026-03-16 05:23:02.943097 +0900 KST m=+0.963039969
+39
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.001504 +0900 KST m=+1.021447646
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.001611 +0900 KST m=+1.021554859
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.04261 +0900 KST m=+1.062554609
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.042768 +0900 KST m=+1.062712858
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.098019 +0900 KST m=+1.117964702
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.098116 +0900 KST m=+1.118061831
+38
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.140622 +0900 KST m=+1.160568321
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.140702 +0900 KST m=+1.160648492
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.199 +0900 KST m=+1.218947331
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.199117 +0900 KST m=+1.219064498
+10
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.263789 +0900 KST m=+1.283737583
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.263945 +0900 KST m=+1.283893407
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.30117 +0900 KST m=+1.321119194
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.301306 +0900 KST m=+1.321255122
+31
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.335609 +0900 KST m=+1.355559323
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.335729 +0900 KST m=+1.355678358
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.376533 +0900 KST m=+1.396483704
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.376643 +0900 KST m=+1.396593874
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.434443 +0900 KST m=+1.454395158
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.434544 +0900 KST m=+1.454495408
+5
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.476419 +0900 KST m=+1.496371839
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.4765 +0900 KST m=+1.496452811
+41
+no need vote 1 in 2state 0
+44
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.527383 +0900 KST m=+1.547336132
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.527539 +0900 KST m=+1.547492317
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.573215 +0900 KST m=+1.593169356
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.573359 +0900 KST m=+1.593312825
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.630624 +0900 KST m=+1.650578956
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.633511 +0900 KST m=+1.653466588
+no need vote 0 in 2state 2
+48
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.707571 +0900 KST m=+1.727528156
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.710798 +0900 KST m=+1.730754385
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.776222 +0900 KST m=+1.79617987262
+no need vote 1 in 2state 0
+
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.784971 +0900 KST m=+1.804928994
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.831871 +0900 KST m=+1.851829637
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.83197 +0900 KST m=+1.851928797
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.87188 +0900 KST m=+1.891839450
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.871992 +0900 KST m=+1.891951518
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.933208 +0900 KST m=+1.953169489
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.933364 +0900 KST m=+1.953325107
+7
+no need vote 1 in 2state 0
+no need vote 0 in 2state 2
+32
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.970329 +0900 KST m=+1.990290948
+me 0 term 2 send heart beat at 2026-03-16 05:23:03.970407 +0900 KST m=+1.990368495
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.029142 +0900 KST m=+2.049104455
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.029232 +0900 KST m=+2.049194493
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.087641 +0900 KST m=+2.107605017
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.087862 +0900 KST m=+2.107826183
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.150056 +0900 KST m=+2.170020737
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.150194 +0900 KST m=+2.170159100
+24
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.196526 +0900 KST m=+2.216491749
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.196626 +0900 KST m=+2.216592046
+no need vote 0 in 2state 2
+27
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.258648 +0900 KST m=+2.278614929
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.258734 +0900 KST m=+2.278700915
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.305143 +0900 KST m=+2.325111266
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.305305 +0900 KST m=+2.325272748
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.341322 +0900 KST m=+2.361290886
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.341417 +0900 KST m=+2.361385017
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.390374 +0900 KST m=+2.410343271
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.390466 +0900 KST m=+2.410434934
+17
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.444015 +0900 KST m=+2.463985845
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.444119 +0900 KST m=+2.464089540
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.485568 +0900 KST m=+2.505538828
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.485712 +0900 KST m=+2.505683476
+25
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.526793 +0900 KST m=+2.546765342
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.52691 +0900 KST m=+2.546881694
+no need vote 0 in 2state 2
+33
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.583702 +0900 KST m=+2.603675079
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.583797 +0900 KST m=+2.603769503
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.627789 +0900 KST m=+2.647762858
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.627884 +0900 KST m=+2.647857645
+38
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.684267 +0900 KST m=+2.704241792
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.68439 +0900 KST m=+2.704365250
+3
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.733169 +0900 KST m=+2.753145086
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.733303 +0900 KST m=+2.753279037
+no need vote 0 in 2state 2
+6
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.788343 +0900 KST m=+2.808320233
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.78848 +0900 KST m=+2.808456495
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.844168 +0900 KST m=+2.864145458
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.844256 +0900 KST m=+2.864233626
+34
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.900805 +0900 KST m=+2.920784158
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.900928 +0900 KST m=+2.920906983
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.936753 +0900 KST m=+2.956732426
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.936848 +0900 KST m=+2.956827926
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.979483 +0900 KST m=+2.999463962
+me 0 term 2 send heart beat at 2026-03-16 05:23:04.979709 +0900 KST m=+2.999689101
+26
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.020939 +0900 KST m=+3.040919733
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.021029 +0900 KST m=+3.041010402
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.081482 +0900 KST m=+3.101464116
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.081586 +0900 KST m=+3.101568504
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.138542 +0900 KST m=+3.158525832
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.138638 +0900 KST m=+3.158620941
+41
+no need vote 2 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.198603 +0900 KST m=+3.218587614
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.198711 +0900 KST m=+3.218695270
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.235869 +0900 KST m=+3.255853992
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.235983 +0900 KST m=+3.255968531
+44
+no need vote 1 in 2state 0
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.296951 +0900 KST m=+3.316937483
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.297094 +0900 KST m=+3.317080650
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.333897 +0900 KST m=+3.353883527
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.333972 +0900 KST m=+3.353959486
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.385372 +0900 KST m=+3.405359757
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.385471 +0900 KST m=+3.405459263
+12
+no need vote 1 in 2state 0
+no need vote 0 in 2state 2
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.443437 +0900 KST m=+3.463425644
+me 0 term 2 send heart beat at 2026-03-16 05:23:05.443521 +0900 KST m=+3.463510044
+1
+no need vote 2 in 2state 0
+  ... Passed --  time  3.2s #peers 3 #RPCs   126 #Ops    0
+10
+no need vote 1 in 2state 0
+--- PASS: TestInitialElection3A (3.71s)
+=== RUN   TestReElection3A
+**me 0 think vote in term 1
+**me 0 think vote in term 2
+**me 1 think vote in term 1
+**me 2 think vote in term 1
+Test (3A): election after network failure (reliable network)...
+**me 1 think vote in term 2
+me 2 vote for 1 in Term 2
+became a leader im 1 in term  2
+me 1 term 2 send heart beat at 2026-03-16 05:23:05.971005 +0900 KST m=+0.249045608
+me 1 term 2 send heart beat at 2026-03-16 05:23:05.971389 +0900 KST m=+0.249429523
+2
+no need vote 0 in 2state 0
+15
+no need vote 2 in 2state 0
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.015672 +0900 KST m=+0.293713251
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.015769 +0900 KST m=+0.293810079
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.070082 +0900 KST m=+0.348124116
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.070179 +0900 KST m=+0.348221484
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.117622 +0900 KST m=+0.395665696
+45
+no need vote 0 in 2state 0
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.117763 +0900 KST m=+0.395806373
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.1686 +0900 KST m=+0.446644314
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.168813 +0900 KST m=+0.446857310
+no need vote 1 in 2state 2
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.229821 +0900 KST m=+0.507866506
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.229966 +0900 KST m=+0.508010884
+34
+no need vote 2 in 2state 0
+36
+no need vote 0 in 2state 0
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.290048 +0900 KST m=+0.568094093
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.290202 +0900 KST m=+0.568248769
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.327819 +0900 KST m=+0.605866289
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.327956 +0900 KST m=+0.606002728
+5
+no need vote 2 in 2state 0
+no need vote 1 in 2state 2
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.37543 +0900 KST m=+0.653477707
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.375544 +0900 KST m=+0.653592255
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.433104 +0900 KST m=+0.711153111
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.433236 +0900 KST m=+0.711284855
+no need vote 1 in 2state 2
+92
+no need vote 2 in 2state 0
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.472287 +0900 KST m=+0.750337284
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.47243 +0900 KST m=+0.750479858
+114
+no need vote 0 in 2state 0
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.510712 +0900 KST m=+0.788762128
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.510829 +0900 KST m=+0.788879885
+no need vote 1 in 2state 2
+165
+no need vote 2 in 2state 0
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.550543 +0900 KST m=+0.828594472
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.550664 +0900 KST m=+0.828715695
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.589099 +0900 KST m=+0.867151140
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.589184 +0900 KST m=+0.867235957
+229
+no need vote 0 in 2state 0
+no need vote 1 in 2state 2
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.636133 +0900 KST m=+0.914186003
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.636235 +0900 KST m=+0.914288229
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.68446 +0900 KST m=+0.962513394
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.684563 +0900 KST m=+0.962617237
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.726729 +0900 KST m=+1.004783499
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.726834 +0900 KST m=+1.004888735
+374
+**me 2 think vote in term 3
+me 0 vote for 2 in Term 3
+became a leader im 2 in term  3
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.761796 +0900 KST m=+0.926650599
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.762175 +0900 KST m=+0.927029653
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.784317 +0900 KST m=+1.062372438
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.78443 +0900 KST m=+1.062485664
+no need vote 1 in 2state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.803038 +0900 KST m=+0.967893713
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.803157 +0900 KST m=+0.968012290
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.838827 +0900 KST m=+1.116883566
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.838993 +0900 KST m=+1.117049783
+no need vote 1 in 2state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.863837 +0900 KST m=+1.028693753
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.863906 +0900 KST m=+1.028762416
+4
+no need vote 0 in 3state 0
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.877344 +0900 KST m=+1.155401647
+me 1 term 2 send heart beat at 2026-03-16 05:23:06.877444 +0900 KST m=+1.155501833
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.916837 +0900 KST m=+1.081694553
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.917058 +0900 KST m=+1.081915166
+30
+no need vote 1 in 3state 0
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.973298 +0900 KST m=+1.138157201
+me 2 term 3 send heart beat at 2026-03-16 05:23:06.97345 +0900 KST m=+1.138308792
+29
+no need vote 0 in 3state 0
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.011226 +0900 KST m=+1.176085857
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.011306 +0900 KST m=+1.176165701
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.062717 +0900 KST m=+1.227577313
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.062799 +0900 KST m=+1.227659143
+no need vote 2 in 3state 2
+45
+no need vote 0 in 3state 0
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.116264 +0900 KST m=+1.281125598
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.116355 +0900 KST m=+1.281216359
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.154695 +0900 KST m=+1.319557373
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.15494 +0900 KST m=+1.319801693
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.206394 +0900 KST m=+1.371256591
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.206635 +0900 KST m=+1.371497832
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.25981 +0900 KST m=+1.424674024
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.25992 +0900 KST m=+1.424783660
+no need vote 2 in 3state 2
+24
+no need vote 1 in 3state 0
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.313179 +0900 KST m=+1.478044284
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.313292 +0900 KST m=+1.478156963
+40
+no need vote 0 in 3state 0
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.365248 +0900 KST m=+1.530114161
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.365345 +0900 KST m=+1.530210676
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.406951 +0900 KST m=+1.571818187
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.407123 +0900 KST m=+1.571989580
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.45651 +0900 KST m=+1.621377238
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.45664 +0900 KST m=+1.621507242
+no need vote 2 in 3state 2
+58
+no need vote 1 in 3state 0
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.502815 +0900 KST m=+1.667683137
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.50294 +0900 KST m=+1.667808572
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.544102 +0900 KST m=+1.708970924
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.544236 +0900 KST m=+1.709105519
+171
+no need vote 0 in 3state 0
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.58224 +0900 KST m=+1.747110307
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.58234 +0900 KST m=+1.747209877
+207
+no need vote 1 in 3state 0
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.623627 +0900 KST m=+1.788497994
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.623786 +0900 KST m=+1.788656410
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.670205 +0900 KST m=+1.835076755
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.670338 +0900 KST m=+1.835209915
+270
+no need vote 0 in 3state 0
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.727115 +0900 KST m=+1.891987921
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.727209 +0900 KST m=+1.892081580
+354
+**me 1 think vote in term 4
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.784634 +0900 KST m=+1.949508100
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.784775 +0900 KST m=+1.949649194
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.844977 +0900 KST m=+2.009852189
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.845067 +0900 KST m=+2.009941456
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.891929 +0900 KST m=+2.056804766
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.892013 +0900 KST m=+2.056888816
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.937756 +0900 KST m=+2.102632570
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.93785 +0900 KST m=+2.102726225
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.986344 +0900 KST m=+2.151222003
+me 2 term 3 send heart beat at 2026-03-16 05:23:07.986446 +0900 KST m=+2.151323544
+no need vote 2 in 3state 2
+617
+**me 0 think vote in term 4
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.046195 +0900 KST m=+2.211073203
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.046312 +0900 KST m=+2.211191041
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.0778 +0900 KST m=+2.242679001
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.077927 +0900 KST m=+2.242806485
+702
+**me 1 think vote in term 5
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.135076 +0900 KST m=+2.299956810
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.13524 +0900 KST m=+2.300119880
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.171442 +0900 KST m=+2.336322523
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.171655 +0900 KST m=+2.336536336
+788
+**me 0 think vote in term 5
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.221867 +0900 KST m=+2.386749159
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.222008 +0900 KST m=+2.386889441
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.257564 +0900 KST m=+2.422446592
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.257716 +0900 KST m=+2.422598829
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.290691 +0900 KST m=+2.455573987
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.290774 +0900 KST m=+2.455657360
+897
+**me 0 think vote in term 6
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.324049 +0900 KST m=+2.488933213
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.324173 +0900 KST m=+2.489056485
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.372286 +0900 KST m=+2.537170667
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.372373 +0900 KST m=+2.537257570
+1008
+**me 1 think vote in term 6
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.424133 +0900 KST m=+2.589018821
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.424247 +0900 KST m=+2.589132746
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.472586 +0900 KST m=+2.637472357
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.472686 +0900 KST m=+2.637572098
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.516146 +0900 KST m=+2.681033460
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.51625 +0900 KST m=+2.681137742
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.564667 +0900 KST m=+2.729555318
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.564771 +0900 KST m=+2.729659210
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.600527 +0900 KST m=+2.765416493
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.600687 +0900 KST m=+2.765575885
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.647311 +0900 KST m=+2.812201167
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.647402 +0900 KST m=+2.812292034
+1244
+**me 0 think vote in term 7
+1263
+**me 1 think vote in term 7
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.684228 +0900 KST m=+2.849118470
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.684338 +0900 KST m=+2.849228607
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.718517 +0900 KST m=+2.883407700
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.718603 +0900 KST m=+2.883494188
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.761893 +0900 KST m=+2.926785092
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.761992 +0900 KST m=+2.926883916
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.799497 +0900 KST m=+2.964389368
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.799656 +0900 KST m=+2.964549014
+1441
+**me 1 think vote in term 8
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.857895 +0900 KST m=+3.022789284
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.858058 +0900 KST m=+3.022951288
+1460
+**me 0 think vote in term 8
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.913188 +0900 KST m=+3.078082489
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.91327 +0900 KST m=+3.078164748
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.95931 +0900 KST m=+3.124205749
+me 2 term 3 send heart beat at 2026-03-16 05:23:08.959402 +0900 KST m=+3.124297114
+1579
+**me 0 think vote in term 9
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.016369 +0900 KST m=+3.181266131
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.016519 +0900 KST m=+3.181415457
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.077012 +0900 KST m=+3.241910222
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.077132 +0900 KST m=+3.242030101
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.108042 +0900 KST m=+3.272939885
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.108133 +0900 KST m=+3.273030884
+1706
+**me 1 think vote in term 9
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.16644 +0900 KST m=+3.331339462
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.166571 +0900 KST m=+3.331469978
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.20284 +0900 KST m=+3.367741378
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.203008 +0900 KST m=+3.367907663
+1800
+**me 0 think vote in term 10
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.241272 +0900 KST m=+3.406173330
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.241399 +0900 KST m=+3.406299625
+1841
+**me 1 think vote in term 10
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.297128 +0900 KST m=+3.462029983
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.297228 +0900 KST m=+3.462129731
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.335363 +0900 KST m=+3.500265441
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.335505 +0900 KST m=+3.500407950
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.392091 +0900 KST m=+3.556994508
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.392188 +0900 KST m=+3.557091230
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.430489 +0900 KST m=+3.595393820
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.430606 +0900 KST m=+3.595510328
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.462233 +0900 KST m=+3.627137837
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.462341 +0900 KST m=+3.627245707
+2109
+**me 0 think vote in term 11
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.519381 +0900 KST m=+3.684286523
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.519456 +0900 KST m=+3.684361481
+me 1 vote for 0 in Term 11
+became a leader im 0 in term  11
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.545125 +0900 KST m=+4.049541493
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.545794 +0900 KST m=+4.050210676
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.578212 +0900 KST m=+3.743118973
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.578329 +0900 KST m=+3.743236090
+40
+no need vote 1 in 11state 0
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.607048 +0900 KST m=+4.111465519
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.607185 +0900 KST m=+4.111603245
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.634388 +0900 KST m=+3.799295936
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.634558 +0900 KST m=+3.799466618
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.666214 +0900 KST m=+4.170633233
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.666348 +0900 KST m=+4.170766683
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.693631 +0900 KST m=+3.858540607
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.693767 +0900 KST m=+3.858675943
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.724051 +0900 KST m=+4.228470937
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.72414 +0900 KST m=+4.228560379
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.735301 +0900 KST m=+3.900211199
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.735418 +0900 KST m=+3.900328119
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.779512 +0900 KST m=+4.283933480
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.779593 +0900 KST m=+4.284014060
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.783429 +0900 KST m=+3.948339690
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.783504 +0900 KST m=+3.948414509
+10
+no need vote 1 in 11state 0
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.836919 +0900 KST m=+4.341341134
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.837013 +0900 KST m=+4.341435552
+no need vote 0 in 11state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.843611 +0900 KST m=+4.008523137
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.84372 +0900 KST m=+4.008631936
+no need vote 2 in 3state 2
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.881891 +0900 KST m=+4.046803944
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.882009 +0900 KST m=+4.046921998
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.893973 +0900 KST m=+4.398396002
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.894085 +0900 KST m=+4.398508153
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.915168 +0900 KST m=+4.080081760
+me 2 term 3 send heart beat at 2026-03-16 05:23:09.915282 +0900 KST m=+4.080195032
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.9476 +0900 KST m=+4.452023903
+me 0 term 11 send heart beat at 2026-03-16 05:23:09.947827 +0900 KST m=+4.452250802
+14
+no need vote 2 in 11state 0
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.00739 +0900 KST m=+4.511815022
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.007487 +0900 KST m=+4.511912507
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.053015 +0900 KST m=+4.557441679
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.053127 +0900 KST m=+4.557553256
+no need vote 0 in 11state 2
+11
+no need vote 1 in 11state 0
+39
+no need vote 2 in 11state 0
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.097977 +0900 KST m=+4.602404387
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.098192 +0900 KST m=+4.602618837
+no need vote 0 in 11state 2
+18
+no need vote 1 in 11state 0
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.134269 +0900 KST m=+4.638696235
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.13437 +0900 KST m=+4.638797884
+38
+no need vote 1 in 11state 0
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.18711 +0900 KST m=+4.691538496
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.18726 +0900 KST m=+4.691689101
+56
+no need vote 1 in 11state 0
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.246422 +0900 KST m=+4.750851861
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.246618 +0900 KST m=+4.751048324
+no need vote 0 in 11state 2
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.306841 +0900 KST m=+4.811271808
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.306923 +0900 KST m=+4.811353817
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.348407 +0900 KST m=+4.852839042
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.348683 +0900 KST m=+4.853115121
+no need vote 0 in 11state 2
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.390655 +0900 KST m=+4.895087436
+me 0 term 11 send heart beat at 2026-03-16 05:23:10.390776 +0900 KST m=+4.895208218
+  ... Passed --  time  4.5s #peers 3 #RPCs   244 #Ops    0
+38
+no need vote 2 in 11state 0
+--- PASS: TestReElection3A (4.97s)
+=== RUN   TestManyElections3A
+**me 0 think vote in term 1
+**me 1 think vote in term 1
+**me 2 think vote in term 1
+**me 0 think vote in term 2
+**me 3 think vote in term 1
+**me 1 think vote in term 2
+**me 0 think vote in term 3
+**me 4 think vote in term 1
+**me 1 think vote in term 3
+**me 2 think vote in term 2
+**me 3 think vote in term 2
+**me 2 think vote in term 3
+**me 5 think vote in term 1
+**me 0 think vote in term 4
+**me 4 think vote in term 2
+**me 6 think vote in term 1
+Test (3A): multiple elections (reliable network)...
+**me 1 think vote in term 4
+me 5 vote for 1 in Term 4
+me 4 vote for 1 in Term 4
+**me 3 think vote in term 3
+me 3 vote for 1 in Term 4
+me 2 vote for 1 in Term 4
+became a leader im 1 in term  4
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.272881 +0900 KST m=+0.697945231
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.273244 +0900 KST m=+0.698308451
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.27334 +0900 KST m=+0.698404847
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.273431 +0900 KST m=+0.698495479
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.273674 +0900 KST m=+0.698738526
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.273741 +0900 KST m=+0.698805771
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.329303 +0900 KST m=+0.754368879
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.329397 +0900 KST m=+0.754462673
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.329497 +0900 KST m=+0.754562934
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.329615 +0900 KST m=+0.754680919
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.329777 +0900 KST m=+0.754842045
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.329897 +0900 KST m=+0.754962269
+11
+no need vote 0 in 4state 0
+23
+no need vote 2 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.377103 +0900 KST m=+0.802168963
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.377259 +0900 KST m=+0.802325193
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.377365 +0900 KST m=+0.802431646
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.377505 +0900 KST m=+0.802570982
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.377592 +0900 KST m=+0.802658079
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.377746 +0900 KST m=+0.802812354
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.418407 +0900 KST m=+0.843474082
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.418587 +0900 KST m=+0.843653683
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.418668 +0900 KST m=+0.843735339
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.418748 +0900 KST m=+0.843815234
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.418924 +0900 KST m=+0.843991524
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.419162 +0900 KST m=+0.844229526
+13
+no need vote 6 in 4state 0
+17
+no need vote 5 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.475338 +0900 KST m=+0.900406372
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.47542 +0900 KST m=+0.900487721
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.475552 +0900 KST m=+0.900619744
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.475629 +0900 KST m=+0.900697474
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.475794 +0900 KST m=+0.900862136
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.476003 +0900 KST m=+0.901071584
+0
+no need vote 4 in 4state 0
+37
+no need vote 3 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.535919 +0900 KST m=+0.960988581
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.536034 +0900 KST m=+0.961103194
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.536163 +0900 KST m=+0.961232784
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.536258 +0900 KST m=+0.961327117
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.536452 +0900 KST m=+0.961521072
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.536578 +0900 KST m=+0.961647338
+no need vote 1 in 4state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.579571 +0900 KST m=+1.004641550
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.579667 +0900 KST m=+1.004737188
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.57977 +0900 KST m=+1.004840532
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.579857 +0900 KST m=+1.004927417
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.580021 +0900 KST m=+1.005091594
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.5801 +0900 KST m=+1.005169824
+40
+no need vote 4 in 4state 0
+30
+no need vote 3 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.632032 +0900 KST m=+1.057102901
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.632279 +0900 KST m=+1.057350218
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.632646 +0900 KST m=+1.057717539
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.632887 +0900 KST m=+1.057958383
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.633047 +0900 KST m=+1.058118513
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.633205 +0900 KST m=+1.058276487
+28
+no need vote 2 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.671578 +0900 KST m=+1.096649356
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.671657 +0900 KST m=+1.096728529
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.671731 +0900 KST m=+1.096803093
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.671831 +0900 KST m=+1.096903063
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.672022 +0900 KST m=+1.097093756
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.672093 +0900 KST m=+1.097164716
+16
+no need vote 0 in 4state 0
+18
+no need vote 5 in 4state 0
+36
+no need vote 6 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.729882 +0900 KST m=+1.154954702
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.729991 +0900 KST m=+1.155063807
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.730123 +0900 KST m=+1.155195500
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.730236 +0900 KST m=+1.155309229
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.730366 +0900 KST m=+1.155438754
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.730483 +0900 KST m=+1.155555521
+30
+no need vote 4 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.779688 +0900 KST m=+1.204762303
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.779772 +0900 KST m=+1.204845664
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.779856 +0900 KST m=+1.204930066
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.779933 +0900 KST m=+1.205007076
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.780063 +0900 KST m=+1.205136381
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.780158 +0900 KST m=+1.205231891
+54
+no need vote 5 in 4state 0
+81
+no need vote 0 in 4state 0
+no need vote 1 in 4state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.832936 +0900 KST m=+1.258011300
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.833047 +0900 KST m=+1.258121439
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.833189 +0900 KST m=+1.258263421
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.833277 +0900 KST m=+1.258351958
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.833475 +0900 KST m=+1.258549343
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.833557 +0900 KST m=+1.258632275
+41
+no need vote 2 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.89059 +0900 KST m=+1.315666053
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.890681 +0900 KST m=+1.315756528
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.890774 +0900 KST m=+1.315849598
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.890839 +0900 KST m=+1.315915365
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.890982 +0900 KST m=+1.316057374
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.891054 +0900 KST m=+1.316129885
+37
+no need vote 6 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.933162 +0900 KST m=+1.358238628
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.933358 +0900 KST m=+1.358434301
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.933483 +0900 KST m=+1.358560167
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.933582 +0900 KST m=+1.358659107
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.933939 +0900 KST m=+1.359016017
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.934028 +0900 KST m=+1.359105026
+2
+no need vote 3 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.971086 +0900 KST m=+1.396163866
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.971173 +0900 KST m=+1.396250018
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.971315 +0900 KST m=+1.396392443
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.971417 +0900 KST m=+1.396494889
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.971632 +0900 KST m=+1.396709592
+me 1 term 4 send heart beat at 2026-03-16 05:23:11.971762 +0900 KST m=+1.396839697
+6
+no need vote 2 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.017531 +0900 KST m=+1.442609268
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.017649 +0900 KST m=+1.442727152
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.017748 +0900 KST m=+1.442826082
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.01783 +0900 KST m=+1.442907941
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.018113 +0900 KST m=+1.443190827
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.018205 +0900 KST m=+1.443283357
+309
+**me 0 think vote in term 5
+43
+no need vote 4 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.078532 +0900 KST m=+1.503611112
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.078663 +0900 KST m=+1.503742310
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.078852 +0900 KST m=+1.503931671
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.079065 +0900 KST m=+1.504144206
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.079251 +0900 KST m=+1.504330671
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.079398 +0900 KST m=+1.504477533
+369
+**me 5 think vote in term 5
+no need vote 1 in 4state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.123628 +0900 KST m=+1.548708690
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.123722 +0900 KST m=+1.548802327
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.123949 +0900 KST m=+1.549029065
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.12407 +0900 KST m=+1.549150157
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.124147 +0900 KST m=+1.549227192
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.124272 +0900 KST m=+1.549352557
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.168456 +0900 KST m=+1.593537164
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.168569 +0900 KST m=+1.593649589
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.16865 +0900 KST m=+1.593730840
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.168717 +0900 KST m=+1.593798106
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.168909 +0900 KST m=+1.593989740
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.169007 +0900 KST m=+1.594087882
+6
+no need vote 6 in 4state 0
+464
+**me 0 think vote in term 6
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.213256 +0900 KST m=+1.638337808
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.213334 +0900 KST m=+1.638415483
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.213411 +0900 KST m=+1.638493203
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.213516 +0900 KST m=+1.638598307
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.213659 +0900 KST m=+1.638740757
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.213715 +0900 KST m=+1.638797059
+5
+no need vote 3 in 4state 0
+27
+no need vote 2 in 4state 0
+78
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.293521 +0900 KST m=+1.718604369
+no need vote 4 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.293771 +0900 KST m=+1.718854746
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.293944 +0900 KST m=+1.719027888
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.294191 +0900 KST m=+1.719274704
+no need vote 1 in 4state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.294313 +0900 KST m=+1.719396095
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.294436 +0900 KST m=+1.719519661
+47
+no need vote 4 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.347274 +0900 KST m=+1.772358577
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.347349 +0900 KST m=+1.772433352
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.347475 +0900 KST m=+1.772559333
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.347558 +0900 KST m=+1.772642611
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.347667 +0900 KST m=+1.772751667
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.347787 +0900 KST m=+1.772871017
+no need vote 1 in 4state 2
+91
+no need vote 6 in 4state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.40365 +0900 KST m=+1.828735011
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.403725 +0900 KST m=+1.828810460
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.403839 +0900 KST m=+1.828924191
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.403927 +0900 KST m=+1.829012057
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.404112 +0900 KST m=+1.829197788
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.404215 +0900 KST m=+1.829300640
+688
+**me 5 think vote in term 6
+me 4 vote for 5 in Term 6
+me 6 vote for 5 in Term 6
+me 2 vote for 5 in Term 6
+became a leader im 5 in term  6
+150
+no need vote 2 in 6state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.448663 +0900 KST m=+1.421245387
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.449432 +0900 KST m=+1.422014749
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.449636 +0900 KST m=+1.422218895
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.449772 +0900 KST m=+1.422354680
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.450213 +0900 KST m=+1.422796032
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.450305 +0900 KST m=+1.422887142
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.45907 +0900 KST m=+1.884156031
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.459271 +0900 KST m=+1.884357495
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.459425 +0900 KST m=+1.884511363
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.459598 +0900 KST m=+1.884684229
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.459897 +0900 KST m=+1.884983049
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.460065 +0900 KST m=+1.885151616
+176
+no need vote 3 in 4state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.501798 +0900 KST m=+1.474382001
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.501913 +0900 KST m=+1.474496346
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.501993 +0900 KST m=+1.474576427
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.502104 +0900 KST m=+1.474687414
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.50232 +0900 KST m=+1.474903122
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.502573 +0900 KST m=+1.475157012
+no need vote 5 in 6state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.518883 +0900 KST m=+1.943970970
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.518964 +0900 KST m=+1.944051721
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.519073 +0900 KST m=+1.944160558
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.519192 +0900 KST m=+1.944279604
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.519396 +0900 KST m=+1.944483339
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.519521 +0900 KST m=+1.944608990
+31
+no need vote 0 in 6state 0
+250
+no need vote 3 in 4state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.555877 +0900 KST m=+1.528461303
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.556024 +0900 KST m=+1.528608335
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.556098 +0900 KST m=+1.528682457
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.556195 +0900 KST m=+1.528779152
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.556354 +0900 KST m=+1.528938662
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.556512 +0900 KST m=+1.529097045
+no need vote 1 in 4state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.564483 +0900 KST m=+1.989571541
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.56453 +0900 KST m=+1.989618066
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.564623 +0900 KST m=+1.989711805
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.564703 +0900 KST m=+1.989791466
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.564874 +0900 KST m=+1.989962176
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.564938 +0900 KST m=+1.990026779
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.593582 +0900 KST m=+1.566167105
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.593672 +0900 KST m=+1.566256732
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.593791 +0900 KST m=+1.566376290
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.593873 +0900 KST m=+1.566458405
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.594009 +0900 KST m=+1.566594297
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.594115 +0900 KST m=+1.566700029
+no need vote 5 in 6state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.614203 +0900 KST m=+2.039292329
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.614275 +0900 KST m=+2.039364791
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.614419 +0900 KST m=+2.039508401
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.614548 +0900 KST m=+2.039637081
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.614669 +0900 KST m=+2.039758412
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.614817 +0900 KST m=+2.039905946
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.651502 +0900 KST m=+1.624087835
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.651695 +0900 KST m=+1.624281664
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.651769 +0900 KST m=+1.624355537
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.651868 +0900 KST m=+1.624454280
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.652057 +0900 KST m=+1.624643166
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.652127 +0900 KST m=+1.624713454
+2
+no need vote 4 in 6state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.660649 +0900 KST m=+2.085738952
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.66073 +0900 KST m=+2.085820297
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.660826 +0900 KST m=+2.085915896
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.66089 +0900 KST m=+2.085979882
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.661118 +0900 KST m=+2.086208529
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.661302 +0900 KST m=+2.086392638
+25
+no need vote 2 in 6state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.700182 +0900 KST m=+2.125273249
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.700309 +0900 KST m=+2.125399876
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.700486 +0900 KST m=+2.125576791
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.700574 +0900 KST m=+2.125665046
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.700882 +0900 KST m=+2.125972608
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.700986 +0900 KST m=+2.126077148
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.713922 +0900 KST m=+1.686509903
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.714012 +0900 KST m=+1.686599972
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.714131 +0900 KST m=+1.686718236
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.714254 +0900 KST m=+1.686841106
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.714326 +0900 KST m=+1.686913107
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.714447 +0900 KST m=+1.687034338
+61
+no need vote 6 in 6state 0
+9
+no need vote 0 in 6state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.751443 +0900 KST m=+2.176535132
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.751611 +0900 KST m=+2.176703024
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.751724 +0900 KST m=+2.176816350
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.751785 +0900 KST m=+2.176877326
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.75192 +0900 KST m=+2.177011631
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.75206 +0900 KST m=+2.177152187
+no need vote 5 in 6state 2
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.772391 +0900 KST m=+1.744979942
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.772465 +0900 KST m=+1.745053629
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.772541 +0900 KST m=+1.745129317
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.772801 +0900 KST m=+1.745389687
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.772901 +0900 KST m=+1.745489962
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.772955 +0900 KST m=+1.745543319
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.788814 +0900 KST m=+2.213906686
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.788979 +0900 KST m=+2.214071444
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.78907 +0900 KST m=+2.214162269
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.789176 +0900 KST m=+2.214268313
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.789304 +0900 KST m=+2.214396249
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.789439 +0900 KST m=+2.214531928
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.810227 +0900 KST m=+1.782816159
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.810306 +0900 KST m=+1.782894928
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.810386 +0900 KST m=+1.782975774
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.810484 +0900 KST m=+1.783073606
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.810643 +0900 KST m=+1.783232615
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.810735 +0900 KST m=+1.783324205
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.820155 +0900 KST m=+2.245248443
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.82026 +0900 KST m=+2.245353081
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.82035 +0900 KST m=+2.245443299
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.82043 +0900 KST m=+2.245522726
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.820578 +0900 KST m=+2.245671647
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.820674 +0900 KST m=+2.245767102
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.847291 +0900 KST m=+1.819881304
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.847373 +0900 KST m=+1.819962776
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.847456 +0900 KST m=+1.820045975
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.847535 +0900 KST m=+1.820125286
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.847674 +0900 KST m=+1.820263818
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.847853 +0900 KST m=+1.820442535
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.859565 +0900 KST m=+2.284659130
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.859641 +0900 KST m=+2.284734583
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.859771 +0900 KST m=+2.284865372
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.859899 +0900 KST m=+2.284992666
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.859991 +0900 KST m=+2.285084499
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.860162 +0900 KST m=+2.285255765
+no need vote 1 in 4state 2
+40
+no need vote 3 in 6state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.906227 +0900 KST m=+2.331321668
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.906303 +0900 KST m=+2.331397474
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.906377 +0900 KST m=+2.331471518
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.906494 +0900 KST m=+2.331589178
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.906656 +0900 KST m=+2.331751160
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.906767 +0900 KST m=+2.331861683
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.906906 +0900 KST m=+1.879497278
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.906964 +0900 KST m=+1.879555418
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.90707 +0900 KST m=+1.879661356
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.907179 +0900 KST m=+1.879770455
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.907353 +0900 KST m=+1.879943910
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.907599 +0900 KST m=+1.880189665
+17
+no need vote 0 in 6state 0
+34
+no need vote 6 in 6state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.944751 +0900 KST m=+2.369846565
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.944895 +0900 KST m=+2.369990903
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.945021 +0900 KST m=+2.370116693
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.945152 +0900 KST m=+2.370247488
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.945224 +0900 KST m=+2.370319195
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.945385 +0900 KST m=+2.370480285
+45
+no need vote 4 in 6state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.961072 +0900 KST m=+1.933663647
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.961167 +0900 KST m=+1.933758791
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.961251 +0900 KST m=+1.933843299
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.961329 +0900 KST m=+1.933920631
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.961474 +0900 KST m=+1.934065991
+me 5 term 6 send heart beat at 2026-03-16 05:23:12.961564 +0900 KST m=+1.934155761
+17
+no need vote 3 in 6state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.983149 +0900 KST m=+2.408244830
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.983271 +0900 KST m=+2.408367594
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.983425 +0900 KST m=+2.408521255
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.983533 +0900 KST m=+2.408629296
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.983632 +0900 KST m=+2.408728449
+me 1 term 4 send heart beat at 2026-03-16 05:23:12.98384 +0900 KST m=+2.408936368
+45
+no need vote 4 in 6state 0
+235
+no need vote 2 in 6state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.02149 +0900 KST m=+1.994082779
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.021632 +0900 KST m=+1.994225684
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.021703 +0900 KST m=+1.994296253
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.021822 +0900 KST m=+1.994414780
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.021891 +0900 KST m=+1.994484081
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.02204 +0900 KST m=+1.994632870
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.039317 +0900 KST m=+2.464414067
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.039427 +0900 KST m=+2.464523918
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.039518 +0900 KST m=+2.464615635
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.039622 +0900 KST m=+2.464719301
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.039716 +0900 KST m=+2.464813100
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.039996 +0900 KST m=+2.465093240
+no need vote 5 in 6state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.071139 +0900 KST m=+2.496237035
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.071212 +0900 KST m=+2.496309531
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.071305 +0900 KST m=+2.496403280
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.071384 +0900 KST m=+2.496481365
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.071549 +0900 KST m=+2.496646915
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.071668 +0900 KST m=+2.496766185
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.081093 +0900 KST m=+2.053687671
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.081183 +0900 KST m=+2.053777072
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.081309 +0900 KST m=+2.053903433
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.081447 +0900 KST m=+2.054041376
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.081532 +0900 KST m=+2.054125910
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.081604 +0900 KST m=+2.054198829
+no need vote 1 in 4state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.114292 +0900 KST m=+2.539390664
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.114387 +0900 KST m=+2.539486098
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.114474 +0900 KST m=+2.539572325
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.114539 +0900 KST m=+2.539637645
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.114752 +0900 KST m=+2.539850412
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.114842 +0900 KST m=+2.539940965
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.138293 +0900 KST m=+2.110888051
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.138386 +0900 KST m=+2.110981288
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.138454 +0900 KST m=+2.111049879
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.138523 +0900 KST m=+2.111118170
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.138667 +0900 KST m=+2.111262706
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.138749 +0900 KST m=+2.111343981
+no need vote 1 in 4state 2
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.169183 +0900 KST m=+2.594282847
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.169262 +0900 KST m=+2.594361441
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.169343 +0900 KST m=+2.594442937
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.169417 +0900 KST m=+2.594516378
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.169583 +0900 KST m=+2.594682862
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.169744 +0900 KST m=+2.594843890
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.173767 +0900 KST m=+2.146363172
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.173824 +0900 KST m=+2.146420055
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.173907 +0900 KST m=+2.146503139
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.174007 +0900 KST m=+2.146603442
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.174138 +0900 KST m=+2.146733961
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.174197 +0900 KST m=+2.146793334
+5
+no need vote 6 in 6state 0
+38
+no need vote 4 in 6state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.217727 +0900 KST m=+2.190323571
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.21786 +0900 KST m=+2.190456574
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.217985 +0900 KST m=+2.190581802
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.218125 +0900 KST m=+2.190722019
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.21821 +0900 KST m=+2.190806654
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.2185 +0900 KST m=+2.191096567
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.219797 +0900 KST m=+2.644897837
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.219929 +0900 KST m=+2.645029247
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.220086 +0900 KST m=+2.645186872
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.220189 +0900 KST m=+2.645289861
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.220317 +0900 KST m=+2.645417870
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.220466 +0900 KST m=+2.645566147
+no need vote 5 in 6state 2
+31
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.251897 +0900 KST m=+2.676997848
+no need vote 0 in 6state 0
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.252049 +0900 KST m=+2.677150701
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.252193 +0900 KST m=+2.677293804
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.252296 +0900 KST m=+2.677397266
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.252379 +0900 KST m=+2.677480570
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.252578 +0900 KST m=+2.677679584
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.257972 +0900 KST m=+2.230569254
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.258065 +0900 KST m=+2.230662857
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.258149 +0900 KST m=+2.230746436
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.258261 +0900 KST m=+2.230858663
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.258413 +0900 KST m=+2.231010741
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.258518 +0900 KST m=+2.231115536
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.304197 +0900 KST m=+2.729299270
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.304319 +0900 KST m=+2.729421663
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.304398 +0900 KST m=+2.729500366
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.304465 +0900 KST m=+2.729567279
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.304644 +0900 KST m=+2.729746404
+me 1 term 4 send heart beat at 2026-03-16 05:23:13.304757 +0900 KST m=+2.729858846
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.308363 +0900 KST m=+2.280961505
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.308416 +0900 KST m=+2.281014234
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.308489 +0900 KST m=+2.281089531
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.308566 +0900 KST m=+2.281164126
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.308731 +0900 KST m=+2.281329387
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.308843 +0900 KST m=+2.281441390
+59
+no need vote 3 in 6state 0
+564
+**me 2 think vote in term 7
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.362648 +0900 KST m=+2.335247075
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.362754 +0900 KST m=+2.335353728
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.362891 +0900 KST m=+2.335490225
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.362992 +0900 KST m=+2.335592029
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.363054 +0900 KST m=+2.335653344
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.363176 +0900 KST m=+2.335775255
+48
+no need vote 4 in 6state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.422227 +0900 KST m=+2.394828075
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.422303 +0900 KST m=+2.394903292
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.422375 +0900 KST m=+2.394975298
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.422501 +0900 KST m=+2.395101341
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.422562 +0900 KST m=+2.395162994
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.422731 +0900 KST m=+2.395331970
+657
+**me 2 think vote in term 8
+no need vote 5 in 6state 2
+41
+no need vote 1 in 6state 0
+46
+no need vote 6 in 6state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.48035 +0900 KST m=+2.452951475
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.480434 +0900 KST m=+2.453035769
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.480562 +0900 KST m=+2.453163895
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.480684 +0900 KST m=+2.453286269
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.4808 +0900 KST m=+2.453401295
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.480925 +0900 KST m=+2.453526579
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.52183 +0900 KST m=+2.494432462
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.521917 +0900 KST m=+2.494519680
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.522061 +0900 KST m=+2.494663370
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.522167 +0900 KST m=+2.494769405
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.522223 +0900 KST m=+2.494825833
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.522327 +0900 KST m=+2.494929640
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.556033 +0900 KST m=+2.528636275
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.556128 +0900 KST m=+2.528730670
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.55625 +0900 KST m=+2.528852944
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.556376 +0900 KST m=+2.528978839
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.556469 +0900 KST m=+2.529072325
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.556548 +0900 KST m=+2.529151211
+9
+no need vote 0 in 6state 0
+336
+**me 3 think vote in term 7
+47
+no need vote 4 in 6state 0
+838
+**me 2 think vote in term 9
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.621002 +0900 KST m=+2.593606175
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.621089 +0900 KST m=+2.593693267
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.62116 +0900 KST m=+2.593764120
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.621276 +0900 KST m=+2.593880134
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.62138 +0900 KST m=+2.593984280
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.621496 +0900 KST m=+2.594100770
+394
+**me 3 think vote in term 8
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.679975 +0900 KST m=+2.652580622
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.680111 +0900 KST m=+2.652716926
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.680357 +0900 KST m=+2.652962782
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.680558 +0900 KST m=+2.653163295
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.680699 +0900 KST m=+2.653304513
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.680865 +0900 KST m=+2.653470946
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.735442 +0900 KST m=+2.708048090
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.735523 +0900 KST m=+2.708129735
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.735622 +0900 KST m=+2.708228842
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.735716 +0900 KST m=+2.708322935
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.735834 +0900 KST m=+2.708440709
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.736082 +0900 KST m=+2.708688282
+974
+**me 2 think vote in term 10
+27
+no need vote 4 in 6state 0
+37
+no need vote 1 in 6state 0
+no need vote 5 in 6state 2
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.784144 +0900 KST m=+2.756751924
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.784226 +0900 KST m=+2.756833072
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.784332 +0900 KST m=+2.756939547
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.784483 +0900 KST m=+2.757089979
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.784577 +0900 KST m=+2.757184384
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.784731 +0900 KST m=+2.757338626
+14
+no need vote 6 in 6state 0
+27
+no need vote 0 in 6state 0
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.849472 +0900 KST m=+2.822081108
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.849594 +0900 KST m=+2.822202687
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.849694 +0900 KST m=+2.822303024
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.849807 +0900 KST m=+2.822415269
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.850028 +0900 KST m=+2.822636526
+me 5 term 6 send heart beat at 2026-03-16 05:23:13.850164 +0900 KST m=+2.822772925
+2144
+**me 5 think vote in term 9
+me 6 vote for 5 in Term 9
+me 3 vote for 5 in Term 9
+me 4 vote for 5 in Term 9
+became a leader im 5 in term  9
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.895479 +0900 KST m=+2.868088833
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.895569 +0900 KST m=+2.868178433
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.895646 +0900 KST m=+2.868255614
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.895726 +0900 KST m=+2.868335069
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.895877 +0900 KST m=+2.868486254
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.895987 +0900 KST m=+2.868595985
+15
+no need vote 3 in 9state 0
+35
+no need vote 4 in 9state 0
+1178
+**me 2 think vote in term 11
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.959453 +0900 KST m=+2.932063669
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.959551 +0900 KST m=+2.932161664
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.959661 +0900 KST m=+2.932271319
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.959751 +0900 KST m=+2.932362013
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.959893 +0900 KST m=+2.932503185
+me 5 term 9 send heart beat at 2026-03-16 05:23:13.960032 +0900 KST m=+2.932642774
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.00198 +0900 KST m=+2.974591057
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.002105 +0900 KST m=+2.974716371
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.002248 +0900 KST m=+2.974859019
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.002455 +0900 KST m=+2.975066404
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.002704 +0900 KST m=+2.975315399
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.002884 +0900 KST m=+2.975495534
+239
+no need vote 0 in 6state 0
+241
+no need vote 1 in 6state 0
+42
+no need vote 6 in 9state 0
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.049677 +0900 KST m=+3.022289491
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.049746 +0900 KST m=+3.022358264
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.04984 +0900 KST m=+3.022452717
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.049941 +0900 KST m=+3.022552888
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.050086 +0900 KST m=+3.022697954
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.050256 +0900 KST m=+3.022868233
+no need vote 5 in 9state 2
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.100546 +0900 KST m=+3.073158942
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.100625 +0900 KST m=+3.073238141
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.100699 +0900 KST m=+3.073312554
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.1008 +0900 KST m=+3.073413268
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.101029 +0900 KST m=+3.073642257
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.101079 +0900 KST m=+3.073691992
+18
+no need vote 4 in 9state 0
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.140572 +0900 KST m=+3.113186504
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.140671 +0900 KST m=+3.113285054
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.140741 +0900 KST m=+3.113355050
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.140817 +0900 KST m=+3.113430971
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.140989 +0900 KST m=+3.113603011
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.141062 +0900 KST m=+3.113675795
+39
+no need vote 6 in 9state 0
+1375
+**me 2 think vote in term 12
+383
+**me 0 think vote in term 7
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.191548 +0900 KST m=+3.164163205
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.19168 +0900 KST m=+3.164295024
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.191762 +0900 KST m=+3.164376878
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.191837 +0900 KST m=+3.164451995
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.192029 +0900 KST m=+3.164644203
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.192153 +0900 KST m=+3.164768096
+44
+no need vote 3 in 9state 0
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.238791 +0900 KST m=+3.211406973
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.238874 +0900 KST m=+3.211489799
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.238957 +0900 KST m=+3.211572556
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.239032 +0900 KST m=+3.211648006
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.239196 +0900 KST m=+3.211811908
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.239292 +0900 KST m=+3.211907926
+511
+**me 1 think vote in term 7
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.299995 +0900 KST m=+3.272611753
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.300068 +0900 KST m=+3.272684816
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.300209 +0900 KST m=+3.272826348
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.300361 +0900 KST m=+3.272978203
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.300475 +0900 KST m=+3.273091767
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.300774 +0900 KST m=+3.273390536
+1547
+**me 2 think vote in term 13
+44
+no need vote 4 in 9state 0
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.356894 +0900 KST m=+3.329512402
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.356989 +0900 KST m=+3.329607441
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.357063 +0900 KST m=+3.329681473
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.357173 +0900 KST m=+3.329791451
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.357287 +0900 KST m=+3.329904698
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.357377 +0900 KST m=+3.329994620
+no need vote 5 in 9state 2
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.408779 +0900 KST m=+3.381398489
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.408868 +0900 KST m=+3.381487097
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.408982 +0900 KST m=+3.381601304
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.409073 +0900 KST m=+3.381691943
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.409241 +0900 KST m=+3.381859556
+me 5 term 9 send heart beat at 2026-03-16 05:23:14.409346 +0900 KST m=+3.381965378
+74
+no need vote 3 in 9state 0
+40
+no need vote 6 in 9state 0
+704
+**me 0 think vote in term 8
+101
+no need vote 6 in 9state 0
+1764
+**me 2 think vote in term 14
+me 1 vote for 2 in Term 14
+me 6 vote for 2 in Term 14
+me 5 vote for 2 in Term 14
+became a leader im 2 in term  14
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.564227 +0900 KST m=+3.876644968
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.564599 +0900 KST m=+3.877017240
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.564688 +0900 KST m=+3.877106838
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.564757 +0900 KST m=+3.877175289
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.564892 +0900 KST m=+3.877310840
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.565104 +0900 KST m=+3.877522765
+30
+no need vote 1 in 14state 0
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.613493 +0900 KST m=+3.925912443
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.613722 +0900 KST m=+3.926141789
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.613891 +0900 KST m=+3.926310583
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.614024 +0900 KST m=+3.926443023
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.614298 +0900 KST m=+3.926716899
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.614374 +0900 KST m=+3.926793649
+266
+no need vote 4 in 9state 0
+858
+**me 0 think vote in term 9
+44
+no need vote 6 in 14state 0
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.671894 +0900 KST m=+3.984314268
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.671969 +0900 KST m=+3.984389060
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.672062 +0900 KST m=+3.984482276
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.672146 +0900 KST m=+3.984566001
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.672368 +0900 KST m=+3.984787879
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.67243 +0900 KST m=+3.984850596
+4
+no need vote 5 in 14state 0
+364
+**me 3 think vote in term 10
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.726018 +0900 KST m=+4.038438953
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.726085 +0900 KST m=+4.038506187
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.726155 +0900 KST m=+4.038576130
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.726225 +0900 KST m=+4.038646551
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.726401 +0900 KST m=+4.038822481
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.726473 +0900 KST m=+4.038894373
+376
+**me 4 think vote in term 10
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.766173 +0900 KST m=+4.078594937
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.766269 +0900 KST m=+4.078690924
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.766338 +0900 KST m=+4.078760463
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.76644 +0900 KST m=+4.078862010
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.76676 +0900 KST m=+4.079181843
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.766849 +0900 KST m=+4.079270683
+9
+no need vote 1 in 14state 0
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.82625 +0900 KST m=+4.138673001
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.826329 +0900 KST m=+4.138752181
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.826438 +0900 KST m=+4.138861259
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.826515 +0900 KST m=+4.138937878
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.826648 +0900 KST m=+4.139071051
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.826724 +0900 KST m=+4.139146926
+no need vote 2 in 14state 2
+36
+no need vote 6 in 14state 0
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.88123 +0900 KST m=+4.193654799
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.881311 +0900 KST m=+4.193735764
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.881397 +0900 KST m=+4.193820786
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.881495 +0900 KST m=+4.193919117
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.881657 +0900 KST m=+4.194081379
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.881869 +0900 KST m=+4.194292811
+20
+no need vote 4 in 14state 0
+90
+no need vote 1 in 14state 0
+561
+**me 3 think vote in term 11
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.928213 +0900 KST m=+4.240637616
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.92827 +0900 KST m=+4.240695275
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.928332 +0900 KST m=+4.240757629
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.928398 +0900 KST m=+4.240822739
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.928464 +0900 KST m=+4.240889173
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.928683 +0900 KST m=+4.241107858
+23
+no need vote 0 in 14state 0
+143
+no need vote 5 in 14state 0
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.979912 +0900 KST m=+4.292337814
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.979974 +0900 KST m=+4.292399703
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.980051 +0900 KST m=+4.292476912
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.980121 +0900 KST m=+4.292547263
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.980309 +0900 KST m=+4.292735439
+me 2 term 14 send heart beat at 2026-03-16 05:23:14.980384 +0900 KST m=+4.292809722
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.019327 +0900 KST m=+4.331754018
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.019482 +0900 KST m=+4.331908580
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.01958 +0900 KST m=+4.332006462
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.019658 +0900 KST m=+4.332084850
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.019833 +0900 KST m=+4.332260155
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.019994 +0900 KST m=+4.332420469
+2
+no need vote 4 in 14state 0
+24
+no need vote 0 in 14state 0
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.05652 +0900 KST m=+4.368947258
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.05667 +0900 KST m=+4.369097782
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.056747 +0900 KST m=+4.369174060
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.056842 +0900 KST m=+4.369269718
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.056952 +0900 KST m=+4.369379435
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.057029 +0900 KST m=+4.369456127
+35
+no need vote 6 in 14state 0
+no need vote 2 in 14state 2
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.109142 +0900 KST m=+4.421570682
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.109205 +0900 KST m=+4.421633134
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.10928 +0900 KST m=+4.421708816
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.109385 +0900 KST m=+4.421813990
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.109729 +0900 KST m=+4.422157853
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.109792 +0900 KST m=+4.422220911
+755
+**me 3 think vote in term 12
+315
+**me 1 think vote in term 15
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.160627 +0900 KST m=+4.473056319
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.16075 +0900 KST m=+4.473178996
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.16084 +0900 KST m=+4.473269165
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.160924 +0900 KST m=+4.473353985
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.161103 +0900 KST m=+4.473533002
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.161267 +0900 KST m=+4.473696017
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.22299 +0900 KST m=+4.535420231
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.223095 +0900 KST m=+4.535525948
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.223194 +0900 KST m=+4.535624440
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.223259 +0900 KST m=+4.535689691
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.223454 +0900 KST m=+4.535884992
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.223557 +0900 KST m=+4.535987864
+27
+no need vote 6 in 14state 0
+437
+**me 5 think vote in term 15
+58
+no need vote 4 in 14state 0
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.285439 +0900 KST m=+4.597870438
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.285523 +0900 KST m=+4.597954345
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.285694 +0900 KST m=+4.598125736
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.285768 +0900 KST m=+4.598199996
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.28587 +0900 KST m=+4.598302096
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.286036 +0900 KST m=+4.598467654
+61
+no need vote 0 in 14state 0
+484
+**me 1 think vote in term 16
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.334489 +0900 KST m=+4.646921345
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.334578 +0900 KST m=+4.647011220
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.334757 +0900 KST m=+4.647189331
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.334909 +0900 KST m=+4.647341392
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.335108 +0900 KST m=+4.647540414
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.335312 +0900 KST m=+4.647744388
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.386392 +0900 KST m=+4.698825776
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.386484 +0900 KST m=+4.698917428
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.386562 +0900 KST m=+4.698995171
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.386641 +0900 KST m=+4.699075061
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.386803 +0900 KST m=+4.699236581
+me 2 term 14 send heart beat at 2026-03-16 05:23:15.386848 +0900 KST m=+4.699281411
+1029
+**me 3 think vote in term 13
+2660
+**me 2 think vote in term 16
+me 5 vote for 2 in Term 16
+me 0 vote for 2 in Term 16
+me 3 vote for 2 in Term 16
+me 6 vote for 2 in Term 16
+became a leader im 2 in term  16
+618
+**me 5 think vote in term 17
+me 0 vote for 5 in Term 17
+me 2 vote for 5 in Term 17
+me 3 vote for 5 in Term 17
+me 6 vote for 5 in Term 17
+became a leader im 5 in term  17
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.484585 +0900 KST m=+4.457223716
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.484779 +0900 KST m=+4.457417796
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.484972 +0900 KST m=+4.457611225
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.485096 +0900 KST m=+4.457734937
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.485232 +0900 KST m=+4.457870963
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.485321 +0900 KST m=+4.457960351
+9
+no need vote 6 in 17state 0
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.530444 +0900 KST m=+4.503083979
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.530587 +0900 KST m=+4.503227055
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.530707 +0900 KST m=+4.503347165
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.530786 +0900 KST m=+4.503425953
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.530874 +0900 KST m=+4.503513616
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.530992 +0900 KST m=+4.503631561
+18
+no need vote 3 in 17state 0
+221
+no need vote 4 in 14state 0
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.567833 +0900 KST m=+4.540473696
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.567926 +0900 KST m=+4.540566226
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.568049 +0900 KST m=+4.540689866
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.568225 +0900 KST m=+4.540865756
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.568329 +0900 KST m=+4.540969710
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.568437 +0900 KST m=+4.541077227
+11
+no need vote 6 in 17state 0
+272
+no need vote 4 in 14state 0
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.614474 +0900 KST m=+4.587115520
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.614576 +0900 KST m=+4.587217083
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.614648 +0900 KST m=+4.587289262
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.614738 +0900 KST m=+4.587379784
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.61481 +0900 KST m=+4.587451256
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.615073 +0900 KST m=+4.587714409
+12
+no need vote 0 in 17state 0
+805
+**me 1 think vote in term 17
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.666442 +0900 KST m=+4.639084519
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.666627 +0900 KST m=+4.639269743
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.666744 +0900 KST m=+4.639386450
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.666857 +0900 KST m=+4.639499620
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.666952 +0900 KST m=+4.639594096
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.6671 +0900 KST m=+4.639742050
+863
+**me 1 think vote in term 18
+33
+no need vote 6 in 17state 0
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.704664 +0900 KST m=+4.677307074
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.704741 +0900 KST m=+4.677384485
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.704838 +0900 KST m=+4.677481133
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.704913 +0900 KST m=+4.677555942
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.70507 +0900 KST m=+4.677713430
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.705161 +0900 KST m=+4.677804463
+no need vote 5 in 17state 2
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.741146 +0900 KST m=+4.713789922
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.74123 +0900 KST m=+4.713874215
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.741299 +0900 KST m=+4.713943161
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.741377 +0900 KST m=+4.714021267
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.741524 +0900 KST m=+4.714168100
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.741608 +0900 KST m=+4.714251841
+412
+**me 4 think vote in term 15
+26
+no need vote 2 in 17state 0
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.790521 +0900 KST m=+4.763165940
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.79062 +0900 KST m=+4.763264817
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.790709 +0900 KST m=+4.763353560
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.790779 +0900 KST m=+4.763423376
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.790928 +0900 KST m=+4.763572329
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.791035 +0900 KST m=+4.763680160
+24
+no need vote 3 in 17state 0
+no need vote 5 in 17state 2
+56
+no need vote 0 in 17state 0
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.851393 +0900 KST m=+4.824039020
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.851464 +0900 KST m=+4.824109674
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.851539 +0900 KST m=+4.824184984
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.851677 +0900 KST m=+4.824322946
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.851909 +0900 KST m=+4.824555102
+me 5 term 17 send heart beat at 2026-03-16 05:23:15.851984 +0900 KST m=+4.824629720
+1063
+**me 1 think vote in term 19
+me 3 vote for 1 in Term 19
+me 4 vote for 1 in Term 19
+me 5 vote for 1 in Term 19
+became a leader im 1 in term  19
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.898065 +0900 KST m=+5.323215054
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.89812 +0900 KST m=+5.323270339
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.89819 +0900 KST m=+5.323340283
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.898268 +0900 KST m=+5.323418519
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.898438 +0900 KST m=+5.323588378
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.898498 +0900 KST m=+5.323648164
+23
+no need vote 4 in 19state 0
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.957242 +0900 KST m=+5.382393950
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.957361 +0900 KST m=+5.382512562
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.957437 +0900 KST m=+5.382588214
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.957513 +0900 KST m=+5.382664107
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.95762 +0900 KST m=+5.382771164
+me 1 term 19 send heart beat at 2026-03-16 05:23:15.957744 +0900 KST m=+5.382895244
+19
+no need vote 4 in 19state 0
+186
+no need vote 6 in 17state 0
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.000259 +0900 KST m=+5.425411019
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.000372 +0900 KST m=+5.425524605
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.000529 +0900 KST m=+5.425681769
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.000658 +0900 KST m=+5.425810760
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.001028 +0900 KST m=+5.426180437
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.001146 +0900 KST m=+5.426298299
+no need vote 1 in 19state 2
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.036629 +0900 KST m=+5.461782388
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.03671 +0900 KST m=+5.461863245
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.036835 +0900 KST m=+5.461987623
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.036911 +0900 KST m=+5.462063669
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.037022 +0900 KST m=+5.462175113
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.037108 +0900 KST m=+5.462260863
+6
+no need vote 3 in 19state 0
+262
+no need vote 2 in 17state 0
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.087853 +0900 KST m=+5.513006446
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.088369 +0900 KST m=+5.513522640
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.088436 +0900 KST m=+5.513589461
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.088496 +0900 KST m=+5.513650003
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.088683 +0900 KST m=+5.513836871
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.088767 +0900 KST m=+5.513920553
+2
+no need vote 4 in 19state 0
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.132328 +0900 KST m=+5.557482930
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.132392 +0900 KST m=+5.557546411
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.132452 +0900 KST m=+5.557606357
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.132529 +0900 KST m=+5.557683698
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.132777 +0900 KST m=+5.557931652
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.132839 +0900 KST m=+5.557993827
+363
+**me 0 think vote in term 18
+368
+**me 6 think vote in term 18
+44
+no need vote 5 in 19state 0
+no need vote 1 in 19state 2
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.190867 +0900 KST m=+5.616022695
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.190953 +0900 KST m=+5.616109298
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.191033 +0900 KST m=+5.616188769
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.191141 +0900 KST m=+5.616297037
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.191247 +0900 KST m=+5.616402890
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.191384 +0900 KST m=+5.616539677
+432
+**me 6 think vote in term 19
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.251576 +0900 KST m=+5.676732493
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.251673 +0900 KST m=+5.676829722
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.251806 +0900 KST m=+5.676963019
+458
+**me 0 think vote in term 19
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.251941 +0900 KST m=+5.677097638
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.252138 +0900 KST m=+5.677294937
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.252237 +0900 KST m=+5.677394317
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.295238 +0900 KST m=+5.720396213
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.295336 +0900 KST m=+5.720494257
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.29542 +0900 KST m=+5.720578103
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.295527 +0900 KST m=+5.720684684
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.295637 +0900 KST m=+5.720794898
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.295729 +0900 KST m=+5.720886480
+7
+no need vote 4 in 19state 0
+no need vote 1 in 19state 2
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.332266 +0900 KST m=+5.757424006
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.332369 +0900 KST m=+5.757527769
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.332477 +0900 KST m=+5.757635497
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.332591 +0900 KST m=+5.757748975
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.332675 +0900 KST m=+5.757833311
+me 1 term 19 send heart beat at 2026-03-16 05:23:16.332815 +0900 KST m=+5.757973647
+37
+no need vote 3 in 19state 0
+558
+**me 2 think vote in term 18
+40
+no need vote 5 in 19state 0
+590
+**me 0 think vote in term 20
+me 2 vote for 0 in Term 20me 5 vote for 0 in Term 20
+
+me 6 vote for 0 in Term 20
+me 3 vote for 0 in Term 20
+me 1 vote for 0 in Term 20
+me 4 vote for 0 in Term 20
+became a leader im 0 in term  20
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.394002 +0900 KST m=+5.931643757
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.394368 +0900 KST m=+5.932010002
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.394489 +0900 KST m=+5.932130891
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.394618 +0900 KST m=+5.932260144
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.394743 +0900 KST m=+5.932385198
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.394836 +0900 KST m=+5.932477672
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.45409 +0900 KST m=+5.991733084
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.454202 +0900 KST m=+5.991844453
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.454287 +0900 KST m=+5.991929488
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.454377 +0900 KST m=+5.992019730
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.454547 +0900 KST m=+5.992189924
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.454604 +0900 KST m=+5.992247165
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.503584 +0900 KST m=+6.041227439
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.503693 +0900 KST m=+6.041336923
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.503828 +0900 KST m=+6.041471413
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.503985 +0900 KST m=+6.041629133
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.504136 +0900 KST m=+6.041779663
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.504295 +0900 KST m=+6.041939005
+17
+no need vote 6 in 20state 0
+41
+no need vote 4 in 20state 0
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.554305 +0900 KST m=+6.091949376
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.554412 +0900 KST m=+6.092056681
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.554513 +0900 KST m=+6.092157799
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.554592 +0900 KST m=+6.092236710
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.554754 +0900 KST m=+6.092398663
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.554903 +0900 KST m=+6.092548160
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.607374 +0900 KST m=+6.145020111
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.607471 +0900 KST m=+6.145116367
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.607578 +0900 KST m=+6.145223571
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.607678 +0900 KST m=+6.145324070
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.607771 +0900 KST m=+6.145417257
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.607897 +0900 KST m=+6.145542533
+3
+no need vote 5 in 20state 0
+29
+no need vote 1 in 20state 0
+42
+no need vote 3 in 20state 0
+54
+no need vote 5 in 20state 0
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.66404 +0900 KST m=+6.201686968
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.664113 +0900 KST m=+6.201759908
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.664215 +0900 KST m=+6.201862173
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.6643 +0900 KST m=+6.201946865
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.664434 +0900 KST m=+6.202081156
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.664531 +0900 KST m=+6.202178099
+21
+no need vote 2 in 20state 0
+no need vote 0 in 20state 2
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.718501 +0900 KST m=+6.256148818
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.7186 +0900 KST m=+6.256247568
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.718722 +0900 KST m=+6.256370101
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.718866 +0900 KST m=+6.256514093
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.719101 +0900 KST m=+6.256748948
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.719282 +0900 KST m=+6.256930024
+51
+no need vote 4 in 20state 0
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.777512 +0900 KST m=+6.315161049
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.777673 +0900 KST m=+6.315322087
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.777787 +0900 KST m=+6.315436183
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.777929 +0900 KST m=+6.315577945
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.778031 +0900 KST m=+6.315679966
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.778154 +0900 KST m=+6.315803040
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.826245 +0900 KST m=+6.363894859
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.826356 +0900 KST m=+6.364005808
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.826438 +0900 KST m=+6.364087519
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.826577 +0900 KST m=+6.364226676
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.826674 +0900 KST m=+6.364323382
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.826792 +0900 KST m=+6.364441615
+48
+no need vote 2 in 20state 0
+0
+no need vote 6 in 20state 0
+no need vote 0 in 20state 2
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.865922 +0900 KST m=+6.403573064
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.86608 +0900 KST m=+6.403730893
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.86625 +0900 KST m=+6.403900871
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.866386 +0900 KST m=+6.404036597
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.866547 +0900 KST m=+6.404197715
+me 0 term 20 send heart beat at 2026-03-16 05:23:16.866666 +0900 KST m=+6.404316662
+  ... Passed --  time  5.7s #peers 7 #RPCs  1014 #Ops    0
+49
+no need vote 6 in 20state 0
+--- PASS: TestManyElections3A (6.50s)
+PASS
+ok  	6.5840/raft1	16.772s
