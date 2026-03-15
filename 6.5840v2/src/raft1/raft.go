@@ -297,17 +297,13 @@ L:
 	for {
 		select {
 		case vote := <-votechan:
+			if vote == 0 {
+				break
+			}
 			voteCount += vote
 		case <-time.After(200 * time.Millisecond):
 			break L
 		}
-
-		rf.mu.Lock()
-		if rf.state == FOLLOWER {
-			rf.mu.Unlock()
-			break
-		}
-		rf.mu.Unlock()
 
 		if voteCount > len(rf.peers)/2 {
 			rf.mu.Lock()
